@@ -28,7 +28,6 @@ class ProjectSeeder extends Seeder
             $project->start_date = $faker->date;
             $project->end_date = $faker->date;
             $project->category = $faker->word;
-            $project->technologies = $faker->words(3, true);
             $project->project_url = $faker->url;
             $project->github_url = $faker->url;
             $project->client = $faker->name;

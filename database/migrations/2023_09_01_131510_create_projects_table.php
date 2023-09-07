@@ -19,7 +19,6 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->string('category');
-            $table->string('technologies');
             $table->string('project_url')->nullable();
             $table->string('github_url')->nullable();
             $table->string('client')->nullable();

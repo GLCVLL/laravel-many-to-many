@@ -11,7 +11,16 @@
                     <p class="card-text">{{ $project->description }}</p>
                     <ul class="list-group mb-3">
                         <li class="list-group-item"><strong>Categoria:</strong> {{ $project->category }}</li>
-                        <li class="list-group-item"><strong>Tecnologie:</strong> {{ $project->technologies }}</li>
+                        <li class="list-group-item"><strong>Tecnologie:</strong>
+                            @forelse ($project->technologies as $technology)
+                                {{ $technology->name }}
+                                @if (!$loop->last)
+                                    ,
+                                @endif
+                            @empty
+                                Nessuna tecnologia associata
+                            @endforelse
+                        </li>
                         <li class="list-group-item"><strong>Cliente:</strong> {{ $project->client }}</li>
                         <li class="list-group-item"><strong>Ruolo:</strong> {{ $project->role }}</li>
                         <li class="list-group-item"><strong>Data di Inizio:</strong> {{ $project->start_date }}</li>
